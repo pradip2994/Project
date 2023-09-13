@@ -1,28 +1,32 @@
-pipeline {
+pipeline{
     agent any
     
-    stages {
-        stage('Checkout') {
-            steps {
-                git url: "https://github.com/pradip2994/Django-todo.git", branch: "main"
+    stages{
+        stage("Code") {
+            steps{
+                echo "Cloning gitHub repo"
+                git url: "https://github.com/pradip2994/Project_k8_django_app.git",branch:'main'
+            } 
+        }
+        stage("Build"){
+            steps{
+                echo "Building code"
+                sh "docker build -t pradipkv/django-app ."
+                
+                
+            }
             
-            }
         }
-        stage('Build') {
-            steps {
-                sh "docker build -t django-app . "
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Testing"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh "docker run -d --name django-container -p 8000:8000 django-app"
-            }
-        }
-    }
-    
+        
+        stage("Push"){
+            steps{
+                echo "Pushing Image to Docker Hub Repository pradipkv"
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPass' , usernameVariable: 'dockerHubUser')]) {
+                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                 sh "docker push pradipkv/django-app"
+                }
+            }   
+                
+        }                
+    }    
 }
