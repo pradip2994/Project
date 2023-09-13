@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: "https://github.com/pradip2994/Django-todo.git", branch: "main"
+            
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "docker build -t django-app . "
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "docker run -d --name django-container -p 8000:8000 django-app"
+            }
+        }
+    }
+    
+}
