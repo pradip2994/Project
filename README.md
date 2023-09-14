@@ -1,4 +1,6 @@
 # Django Todo App Deployment on Kubernetes 
+![maxresdefault](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/ecd546e3-d28a-419e-a1dd-aad9ce46ee40)
+
 
 ## create ec2 instance (t2.micro), install Docker and Jenkins, add jenkins and USER to docker group.
 ```
