@@ -97,3 +97,61 @@ $sudo snap install kubectl --classic
 $kubectl version
 ```
 
+![Screenshot 2023-09-14 120218](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/aa0b564a-1c18-4ae7-8370-079bc90cdb57)
+
+### Create YAML Manifest
+```
+$vi djanjo-app-deploy.yaml
+$vi django-app-service.yaml
+$vi django-app-ingress.yaml
+```
+
+![Screenshot 2023-09-14 121433](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/155aee48-e6be-462a-9289-a19589dc0294)
+
+The below commands apply the configurations defined in the YAML files to your Kubernetes cluster.
+
+```
+$kubectl apply -f djanjo-app-deploy.yaml
+$kubectl apply -f django-app-service.yaml
+$kubectl apply -f django-app-ingress.yaml
+```
+
+![Screenshot 2023-09-14 121601](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/63218609-4b59-47e2-b845-6c1eb6d7e7e2)
+
+The bellow command enable the Ingress addon in a Minikube Kubernetes cluster. This addon allows you to use Ingress resources to expose services and routes HTTP traffic into your Minikube cluster.
+
+```
+$minikube addons enable ingress
+```
+
+![Screenshot 2023-09-14 122037](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/a55dc990-16f1-4ad7-b8ff-9ca41317292d)
+
+The command minikube addons list is used to list the available addons and their statuses in your Minikube Kubernetes cluster. This command provides information about which addons are currently enabled and which ones are disabled.
+
+```
+$minikube addons list
+```
+
+![Screenshot 2023-09-14 122122](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/9886e0f5-b64f-4500-baa9-ca43f186b620)
+
+When you run these commands, you'll get output displaying the relevant information for each resource type.
+
+```
+$kubectl get ingress
+$kubectl get deploy
+$kubectl get svc
+$kubectl get pods
+```
+
+![Screenshot 2023-09-14 122339](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/f2156893-140f-459a-ad62-e133d5b2e8c4)
+
+## To expose application to the internet copy ec2_instance_IP:8000 
+
+![Screenshot 2023-09-14 123817](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/8a632754-fec9-45fe-bd8f-ceb71f6a9719)
+
+```
+12.53.52.34:8000
+```
+
+![Screenshot 2023-09-14 123850](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/164ab14f-547e-40d0-8ddf-49e8b0e4563e)
+
