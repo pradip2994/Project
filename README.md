@@ -59,6 +59,11 @@ In **ScriptPath** name of jenkinsfile then save it.
 
 ![Screenshot 2023-09-14 045923](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/e7aae987-49f4-43cf-9567-490971459071)
 
+## jenkinsfile 
+
+![Screenshot 2023-09-14 190836](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/2176db2f-1970-4ac9-b011-ded20563f5c3)
+
+
 
 Click on **Build Now**
 ## Now you youcan see detail of stages 
