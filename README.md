@@ -1,4 +1,4 @@
-# Django Todo App Deployment on Kubernetes 
+# Django Todo Applicatiom Deployment on Kubernetes 
 ![maxresdefault](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/ecd546e3-d28a-419e-a1dd-aad9ce46ee40)
 
 
@@ -131,7 +131,7 @@ $minikube addons enable ingress
 
 ![Screenshot 2023-09-14 122037](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/a55dc990-16f1-4ad7-b8ff-9ca41317292d)
 
-The command minikube addons list is used to list the available addons and their statuses in your Minikube Kubernetes cluster. This command provides information about which addons are currently enabled and which ones are disabled.
+The command minikube addons list is used to list the available addons and their status in your Minikube Kubernetes cluster. This command provides information about which addons are currently enabled and which ones are disabled.
 
 ```
 $minikube addons list
