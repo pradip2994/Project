@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Cloning GitHub Repository"
+                git url: "https://github.com/pradip2994/Project_k8_django_app.git", branch: "main"
+            
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Building code"
+                sh "docker build -t django-app . "
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+            }
+        }
+        
+        stage("Push"){
+            steps{
+                echo "Pushing Image to Docker Hub Repository pradipkv"
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPass' , usernameVariable: 'dockerHubUser')]) {
+                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                 sh "docker push pradipkv/django-app"
+                }
+            }   
+                
+        }          
+                
+        stage('Deploy') {
+            steps {
+                echo "Deploying Django Application"
+                sh "docker run -d --name django-container -p 8000:8000 django-app"
+            }
+        }
+    }
+    
+}
