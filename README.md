@@ -69,4 +69,27 @@ Click on **Build Now**
 
 ![Screenshot 2023-09-14 054842](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/be4921e0-1afa-4f95-9060-bb4428b6dbd1)
 
+# Install minikube
+
+## Create EC2 instance (t2.medium) instance.
+
+### First you need to install Docker on your machine. Install Docker and run below command.
+
+```
+$sudo usermod -aG docker $USER
+```
+
+![Screenshot 2023-09-14 090531](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/e8084076-c739-4ec4-9d08-7cf6e2a21881)
+
+$minikube start --driver=docker
+Once minikube start finishes, run the command below to check the status of the cluster:
+```
+$minikube status
+```
+
+### Install kubectl
+```
+$sudo snap install kubectl --classic
+$kubectl version
+```
 
