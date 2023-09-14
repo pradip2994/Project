@@ -81,7 +81,10 @@ $sudo usermod -aG docker $USER
 
 ![Screenshot 2023-09-14 090531](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/e8084076-c739-4ec4-9d08-7cf6e2a21881)
 
+```
 $minikube start --driver=docker
+```
+
 Once minikube start finishes, run the command below to check the status of the cluster:
 ```
 $minikube status
