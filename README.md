@@ -1,8 +1,12 @@
 # Deployment of a Django To-Do Application on Kubernetes 
 ![maxresdefault](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/ecd546e3-d28a-419e-a1dd-aad9ce46ee40)
 
+## Create jenkinsfile and push to GitHub.
 
-## create ec2 instance (t2.micro), install Docker and Jenkins, add jenkins and USER to docker group.
+![Screenshot 2023-09-15 193857](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/eba40c2a-0781-4551-a009-6cad7285bcc2)
+
+
+## Create EC2 Instance (t2.micro), Install Docker and Jenkins, add jenkins and USER to docker group.
 ```
 $ sudo usermod -aG docker $user
 $ sudo usermod -aG docker jenkins
