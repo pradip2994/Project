@@ -1,4 +1,4 @@
-# Django Todo Applicatiom Deployment on Kubernetes 
+# Deployment of a Django To-Do Application on Kubernetes 
 ![maxresdefault](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/ecd546e3-d28a-419e-a1dd-aad9ce46ee40)
 
 
