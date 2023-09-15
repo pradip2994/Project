@@ -154,10 +154,15 @@ $kubectl get pods
 
 ![Screenshot 2023-09-14 122339](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/f2156893-140f-459a-ad62-e133d5b2e8c4)
 
-## To expose application to the internet copy ec2_instance_IP:8000 
+## To expose application to the internet use command 
+
+```
+$kubectl port-forward svc/django-app 8000:8000 --address 0.0.0.0
+``` 
 
 ![Screenshot 2023-09-14 123817](https://github.com/pradip2994/Project_k8_django_app/assets/124191442/8a632754-fec9-45fe-bd8f-ceb71f6a9719)
 
+### To access application enter <ec2_instance_IP>:<port_number> in your browser.
 ```
 12.53.52.34:8000
 ```
